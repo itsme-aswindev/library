@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Login</title>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/ico" href="favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<section class="ftco-section">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="login-wrap p-4 p-md-5">
+                    <div style="color: #452066;" class="icon d-flex align-items-center justify-content-center">
+                        <span class="fa fa-user-o"></span>
+                    </div>
+                    <h3 class="text-center mb-4" style="color: #452066;">Already Have an Account?</h3>
+                    <form class="login-form" onsubmit="return display(this);">
+                        <div class="form-group">
+                            <input type="text" class="form-control rounded-left" placeholder="Username" name="username" required>
+                        </div>
+                        <div class="form-group d-flex">
+                            <input type="password" class="form-control rounded-left" placeholder="Password" name="password" required>
+                        </div>
+                        <div class="form-group d-md-flex">
+                            <div class="w-50">
+                                <label class="checkbox-wrap checkbox-primary">
+                                    Remember Me
+                                    <input type="checkbox" checked>
+                                    <span class="checkmark"></span>
+                                </label>
+                            </div>
+                            <div class="w-50 text-md-right">
+                                <a href="#" style="color: #452066;">Forgot Password</a>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary rounded submit p-3 px-5">Login</button>
+                        </div>
+                        <div class="form-group-1">
+                          <button type="button" onclick="guestLogin()" class="btn btn-primary rounded submit p-3 px-5">Login as Guest</button>
+                      </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const validUsers = [
+        { username: "itsmeaswin", password: "Aswindev@2023" }
+    ];
+
+    function display(form) {
+        const username = form.username.value;
+        const password = form.password.value;
+
+        for (const user of validUsers) {
+            if (user.username === username && user.password === password) {
+                alert("Login successful!");
+                window.location.href = "3a0a1d88f0a3812b0cc8aa5960f25a38e2b3a67f94c9c4e4c9b89b147ad6f252.html";
+                return false; // Prevent form submission
+            }
+        }
+
+        alert("Invalid username or password. Please try again.");
+        return false; // Prevent form submission
+    }
+
+    function guestLogin() {
+        alert("You are now logged in as a guest.");
+        window.location.href = "fca54dd3a90d1b06de81de09e0e86e1150d9d9eaa1d9b3e31358117cd0f7b17a.html";
+        return false;
+    }
+</script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/popper.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>
